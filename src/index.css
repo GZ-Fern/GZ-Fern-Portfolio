@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Abril+Fatface&family=Caveat:wght@400;700&family=Courier+Prime:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-light-pine dark:text-dark-text transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .patchwork-section {
+    @apply relative overflow-hidden;
+  }
+  
+  .warm-shadow {
+    box-shadow: 4px 4px 0px rgba(45, 95, 63, 0.15);
+  }
+  
+  .dark .warm-shadow {
+    box-shadow: 4px 4px 0px rgba(139, 111, 71, 0.4);
+  }
+  
+  .book-card {
+    @apply bg-light-surface border-2 border-light-primary rounded-sm p-6 warm-shadow dark:bg-dark-surface dark:border-dark-border;
+    transform: rotate(-0.5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .book-card:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+  
+  .dark .book-card:hover {
+    box-shadow: 6px 6px 0px rgba(139, 111, 71, 0.5);
+  }
+  
+  .collage-card {
+    @apply bg-light-snow border border-light-secondary p-4 dark:bg-warm-beige dark:border-warm-brown;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .handwritten-note {
+    @apply font-handwriting text-lg text-light-primary dark:text-warm-rust;
+  }
+  
+  /* Animated border effect for project cards */
+  @keyframes borderAnimation {
+    0% {
+      clip-path: polygon(0 0, 30% 0, 0 30%, 0 0);
+    }
+    12.5% {
+      clip-path: polygon(35% 0, 65% 0, 50% 0, 50% 0);
+    }
+    25% {
+      clip-path: polygon(70% 0, 100% 0, 100% 30%, 100% 0);
+    }
+    37.5% {
+      clip-path: polygon(100% 35%, 100% 65%, 100% 50%, 100% 50%);
+    }
+    50% {
+      clip-path: polygon(100% 70%, 100% 100%, 70% 100%, 100% 100%);
+    }
+    62.5% {
+      clip-path: polygon(65% 100%, 35% 100%, 50% 100%, 50% 100%);
+    }
+    75% {
+      clip-path: polygon(30% 100%, 0 100%, 0 70%, 0 100%);
+    }
+    87.5% {
+      clip-path: polygon(0 65%, 0 35%, 0 50%, 0 50%);
+    }
+    100% {
+      clip-path: polygon(0 30%, 0 0, 30% 0, 0 0);
+    }
+  }
+  
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 4px solid #10b981;
+    border-radius: 0.125rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .animated-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 4px solid #10b981;
+    border-radius: 0.125rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .dark .animated-border::before,
+  .dark .animated-border::after {
+    border-color: #ea580c;
+  }
+  
+  .animated-border:hover::before {
+    opacity: 1;
+    animation: borderAnimation 2s linear infinite;
+  }
+  
+  .animated-border:hover::after {
+    opacity: 1;
+    animation: borderAnimation 2s linear infinite;
+    animation-delay: -1s;
+  }
+}
+
