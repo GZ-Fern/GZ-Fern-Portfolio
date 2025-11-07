@@ -16,7 +16,7 @@ const About = () => {
           </div>
           
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             {/* Left Column - Photo */}
             <div className="space-y-4">
               <div className="aspect-square overflow-hidden transform -rotate-2">
@@ -45,11 +45,11 @@ const About = () => {
             
             {/* Right Column - Story */}
             <div className="space-y-4">
-              <div className="relative">
+              <div className="relative min-h-[700px] sm:min-h-[650px] md:min-h-[600px] lg:min-h-0">
                 <img 
                   src={`${process.env.PUBLIC_URL}/assets/paragraph_card_decor.png`}
                   alt=""
-                  className="w-full h-auto opacity-70"
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 lg:relative lg:h-auto lg:object-contain"
                   style={{
                     filter: isDark 
                       ? 'sepia(0.3) saturate(0.9) hue-rotate(-10deg) brightness(0.95)' 
@@ -57,8 +57,8 @@ const About = () => {
                     transition: 'filter 0.6s ease-in-out'
                   }}
                 />
-                <div className="absolute inset-0 p-8 flex items-center">
-                  <div className="space-y-3 text-light-pine dark:text-warm-maroon leading-relaxed text-sm">
+                <div className="absolute inset-0 p-4 sm:p-6 md:p-8 flex items-center">
+                  <div className="space-y-2 sm:space-y-3 text-light-pine dark:text-warm-maroon leading-snug sm:leading-relaxed text-xs sm:text-sm">
                     <p>
                       I'm a senior at UTSA pursuing a Computer Science degree with a double concentration in Software Engineering
                       and Data Science. I have a passion for creating scalable, organized, and creative digital experiences focused on human-centered design. I am proudly
