@@ -2,7 +2,7 @@
 
 My personal portfolio showcasing projects, experience, and skills.
 
-**Live Site:** [gz-fern.dev](https://gz-fern.dev) *(coming soon)*
+**Live Site:** [gz-fern.dev](https://gzfern.dev) *(coming soon)*
 
 ## Built With
 
