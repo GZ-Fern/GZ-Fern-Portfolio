@@ -66,7 +66,7 @@ const Projects = () => {
       description: 'YES THIS ONE! Was built with React and styled with Tailwind CSS, featuring a custom theme system with light/dark modes, smooth animations, and responsive design. It includes dynamic routing, reusable components, and a cohesive design tailored to my style.',
       technologies: ['React', 'Tailwind CSS', 'React Router', 'JavaScript', 'VS Code', 'GitHub/Git'],
       image: 'assets/portfolio_project.jpg',
-      github: '#',
+      github: 'https://github.com/GZ-Fern/GZ-Fern-Portfolio',
     },
   ];
 
