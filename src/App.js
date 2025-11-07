@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navigation from './components/Navigation';
 import BackgroundImage from './components/BackgroundImage';
 import ScrollToTop from './components/ScrollToTop';
+import ImagePreloader from './components/ImagePreloader';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -34,7 +35,9 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <AppContent />
+        <ImagePreloader>
+          <AppContent />
+        </ImagePreloader>
       </Router>
     </ThemeProvider>
   );
